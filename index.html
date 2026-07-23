@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Lion School</title>
+  </head>
+  <body class="">
+    <header class="bg-[#3347B0] flex h-24 w-full justify-around md:justify-between md:p-16 items-center">
+      <img src="./img/logo.png" alt="logo lion School" />
+      <button class="md:flex items-center md:gap-4">
+        <img src="./img/sair.png" alt="icone sair" class="h-8 md:h-12" />
+        <span class="hidden md:flex text-white text-4xl">Sair</span>
+      </button>
+    </header>
+
+    <main class="flex flex-col p-16 gap-8 items-center">
+      <h1 class="text-[30px] font-light text-center">
+        Escolha um
+        <span class="text-[#3347B0] font-bold">curso</span>
+        para gerenciar
+      </h1>
+      <img src="./img/dispositivos.png" alt="dispositivos">
+      <img src="./img/studant.png" alt="estudante" class="w-fit" />
+
+      <button class="bg-[#3347B0] size-44 flex items-center justify-center">
+        <img src="./img/desenvolvimento.png" alt="desenvolvimento de sistemas" class="hidden">
+        <h1 class="text-6xl text-white">DS</h1>
+      </button>
+      <button class="bg-[#3347B0] size-44 flex items-center justify-center">
+        <img src="./img/redes.png" alt="redes" class="hidden">
+        <h1 class="text-6xl text-white">RDS</h1>
+      </button>
+    </main>
+
+    <footer class="bg-[#3347B0] flex flex-col items-center p-10 gap-8">
+      <div class="flex flex-col items-center w-full gap-4">
+        <div class="flex gap-5">
+          <img src="./img/telefone.png" alt="telefone" />
+          <span class="text-white">(11) 4774-4700</span>
+        </div>
+
+        <div class="flex gap-5">
+          <img src="./img/icon-email.png" alt="email" />
+          <span class="text-white">lionschool@gmail.com</span>
+        </div>
+
+        <div class="flex gap-5">
+          <img src="./img/local.png" alt="localidade" />
+          <span class="text-white">Rua tcc, 211, Centro, Jandira</span>
+        </div>
+      </div>
+
+      <div class="flex w-full items-center justify-center gap-8">
+        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center">
+          <img src="./img/youtube.png" alt="youtube" />
+        </div>
+
+        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center">
+          <img src="./img/twitter.png" alt="twitter" />
+        </div>
+
+        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center"> 
+          <img src="./img/instagram.png" alt="instagram" />
+        </div>
+
+        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center">
+          <img src="./img/facebook.png" alt="facebook" />
+        </div>
+      </div>
+
+      <span class="text-xs text-white">Copyright © 2026 | Mayara Martins</span>
+    </footer>
+  </body>
+</html>
