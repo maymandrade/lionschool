@@ -13,8 +13,10 @@
     />
     <title>Lion School</title>
   </head>
-  <body class="">
-    <header class="bg-[#3347B0] flex h-24 w-full justify-around md:justify-between md:p-16 items-center">
+  <body class="min-h-screen flex flex-col">
+    <header
+      class="bg-[#3347B0] flex h-24 w-full justify-around md:justify-between md:p-16 items-center"
+    >
       <img src="./img/logo.png" alt="logo lion School" />
       <button class="md:flex items-center md:gap-4">
         <img src="./img/sair.png" alt="icone sair" class="h-8 md:h-12" />
@@ -22,27 +24,51 @@
       </button>
     </header>
 
-    <main class="flex flex-col p-16 gap-8 items-center">
-      <h1 class="text-[30px] font-light text-center">
-        Escolha um
-        <span class="text-[#3347B0] font-bold">curso</span>
-        para gerenciar
-      </h1>
-      <img src="./img/dispositivos.png" alt="dispositivos">
-      <img src="./img/studant.png" alt="estudante" class="w-fit" />
+    <main class=" flex flex-1 items-center justify-center">
+      <div
+        class="flex flex-col md:flex-row p-16 gap-12 items-center justify-center"
+      >
+        <div class="flex flex-col gap-16">
+          <h1 class="text-3xl md:text-6xl font-light text-center md:text-left">
+            Escolha um
+            <span class="text-[#3347B0] font-bold">curso</span>
+            <br />
+            para gerenciar
+          </h1>
+          <img
+            class="hidden md:block w-[436px] h-[262px]"
+            src="./img/dispositivos.png"
+            alt="dispositivos"
+          />
+        </div>
 
-      <button class="bg-[#3347B0] size-44 flex items-center justify-center">
-        <img src="./img/desenvolvimento.png" alt="desenvolvimento de sistemas" class="hidden">
-        <h1 class="text-6xl text-white">DS</h1>
-      </button>
-      <button class="bg-[#3347B0] size-44 flex items-center justify-center">
-        <img src="./img/redes.png" alt="redes" class="hidden">
-        <h1 class="text-6xl text-white">RDS</h1>
-      </button>
+        <div class="bg-red-100">
+          <img src="./img/studant.png" alt="estudante" class="" />
+        </div>
+
+        <div class="flex flex-col gap-16">
+          <button
+            class="bg-[#3347B0] size-44 gap-16 md:h-48 md:w-96 flex items-center justify-center"
+          >
+            <img
+              src="./img/desenvolvimento.png"
+              alt="desenvolvimento de sistemas"
+              class="hidden md:flex"
+            />
+            <h1 class="text-6xl text-white">DS</h1>
+          </button>
+          <button
+            class="bg-[#3347B0] size-44 gap-16 :h-48 md:w-96 flex items-center justify-center"
+          >
+            <img src="./img/redes.png" alt="redes" class="hidden md:flex" />
+            <h1 class="text-6xl text-white">RDS</h1>
+          </button>
+        </div>
+      </div>
     </main>
 
-    <footer class="bg-[#3347B0] flex flex-col items-center p-10 gap-8">
-      <div class="flex flex-col items-center w-full gap-4">
+    <footer class="bg-[#3347B0] flex flex-col md:flex-row items-center p-10 gap-8">
+      <div class="flex md:flex-1 flex-col items-center w-full gap-4">
         <div class="flex gap-5">
           <img src="./img/telefone.png" alt="telefone" />
           <span class="text-white">(11) 4774-4700</span>
@@ -59,25 +85,33 @@
         </div>
       </div>
 
-      <div class="flex w-full items-center justify-center gap-8">
-        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center">
+      <div class="flex md:flex-3 w-full items-center justify-center gap-8">
+        <div
+          class="flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center"
+        >
           <img src="./img/youtube.png" alt="youtube" />
         </div>
 
-        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center">
+        <div
+          class="flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center"
+        >
           <img src="./img/twitter.png" alt="twitter" />
         </div>
 
-        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center"> 
+        <div
+          class="flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center"
+        >
           <img src="./img/instagram.png" alt="instagram" />
         </div>
 
-        <div class=" flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center">
+        <div
+          class="flex border-2 boder-white rounded-full h-12 w-12 items-center justify-center"
+        >
           <img src="./img/facebook.png" alt="facebook" />
         </div>
       </div>
 
-      <span class="text-xs text-white">Copyright © 2026 | Mayara Martins</span>
+      <span class=" md:flex-2 text-xs text-white">Copyright © 2026 | Mayara Martins</span>
     </footer>
   </body>
 </html>
