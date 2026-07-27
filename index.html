@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
+  <script src="./js/app.js" type="module"></script>
   <title>Lion School</title>
 </head>
 
@@ -22,9 +23,10 @@
     </button>
   </header>
 
-  <main class=" flex flex-1 items-center justify-center">
+  <!-- <main id="main" class="flex flex-1 justify-between"> -->
+  <main id="main" class=" flex flex-1 items-center justify-center">
 
-    <div class="flex flex-col lg:flex-row p-16 gap-12 items-center justify-center">
+    <section class="flex flex-col lg:flex-row p-16 gap-12 items-center justify-center">
 
       <div class="flex flex-col gap-16 items-center">
         <h1 class="text-[clamp(2rem,4vw,4rem)] font-light text-center lg:text-left">
@@ -41,23 +43,106 @@
       </div>
 
       <div class="flex flex-col gap-16 p-8">
-        <button class="bg-[#3347B0] gap-16 h-[clamp(175px,40vw,200px)] w-[clamp(175px,40vw,400px)] shadow-2xl shadow-[15px_15px_6px_#3347B050] md:shadow-[15px_15px_0_#3347B050] flex items-center justify-center
+        <button id="botao-ds" class="bg-[#3347B0] gap-16 h-[clamp(175px,40vw,200px)] w-[clamp(175px,40vw,400px)] shadow-2xl shadow-[15px_15px_6px_#3347B050] md:shadow-[15px_15px_0_#3347B050] flex items-center justify-center
          transition-all duration-300 hover:shadow-[15px_15px_6px_#3347B050] hover:-translate-y-2">
           <img src="./img/desenvolvimento.png" alt="desenvolvimento de sistemas" class="hidden md:flex" />
           <h1 class="text-6xl text-white">DS</h1>
         </button>
-        <button class="bg-[#3347B0] gap-16 h-[clamp(175px,40vw,200px)] w-[clamp(175px,40vw,400px)] shadow-2xl shadow-[15px_15px_6px_#3347B050] md:shadow-[15px_15px_0_#3347B050] flex items-center justify-center
+        <button id="botao-rds" class="bg-[#3347B0] gap-16 h-[clamp(175px,40vw,200px)] w-[clamp(175px,40vw,400px)] shadow-2xl shadow-[15px_15px_6px_#3347B050] md:shadow-[15px_15px_0_#3347B050] flex items-center justify-center
           transition-all duration-300 hover:shadow-[15px_15px_6px_#3347B050] hover:-translate-y-2">
           <img src="./img/redes.png" alt="redes" class="hidden md:flex" />
           <h1 class="text-6xl text-white">RDS</h1>
         </button>
       </div>
-    </div>
+    </section>
+
+    <!-- <section class="w-full">
+      <div class=" flex bg-[#BCC2E5] h-12 justify-between px-10 items-center">
+
+        <div class="relative inline-block text-left">
+          <button class="text-[#3347B0] text-[18px] px-4 py-2">Start</button>
+          <div class="flex flex-col right-0 mt-2 w-48 bg-[#3347B0] border border-gray-200 rounded-md shadow-lg hidden">
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100">Status</a>
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100">Finalizado</a>
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100">Cursando</a>
+          </div>
+        </div>
+
+        <div class="relative inline-block text-left">
+          <button class="text-[#3347B0] text-[18px] px-4 py-2">LEGENDA</button>
+          <div class="flex flex-col right-0 mt-2 w-48 bg-[#3347B0] border border-gray-200 rounded-md shadow-lg hidden">
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100">Status</a>
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100">Finalizado</a>
+            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100">Cursando</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6">
+        <h1 class="text-[#3347B0] text-[clamp(2rem,2vw,4rem)] md:text-[64px] text-center font-medium">Desenvolvimento de
+          Sistemas
+        </h1>
+      </div>
+
+      <div class="flex items-center justify-center">
+        <div class="grid md:grid-cols-1  lg:grid-cols-3 xl:grid-cols-6 py-10 gap-16">
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+
+          <div class="flex flex-col bg-[#3347B0] w-52 h-64 items-center justify-center px-2 shadow-2xl shadow-[8px_8px_6px_#3347B050] md:shadow-[8px_8px_6px_#3347B050] flex items-center justify-center
+         transition-all duration-300 hover:shadow-[8px_8px_6px_#3347B050] hover:-translate-y-2">
+            <img src="./img/image 1.png" alt="testando-imagem" class="w-48 h-48">
+            <h3 class="text-center text-white [text-shadow:_3px_1px_3px_black]">HÉLIDA BENTO DE OLIVEIRA LINS
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section> -->
   </main>
 
-  <footer class="bg-[#3347B0] flex flex-col md:flex-row items-center md:justify-between px-24 py-5 gap-8">
+  <footer
+    class="bg-[#3347B0] flex flex-col md:flex-row items-center md:justify-between justify-center md:px-24 py-5 gap-8">
 
-    <div class="flex order-1 flex-col items-center lg:items-start gap-4">
+    <div class="flex order-1 flex-col lg:items-start gap-4 items-center">
       <div class="flex gap-5">
         <img src="./img/telefone.png" alt="telefone" />
         <span class="text-white">(11) 4774-4700</span>
@@ -92,10 +177,9 @@
       </div>
     </div>
 
-    <span class="order-3 md:order-2 lg:order-2 text-xs md:text-xl text-white">Copyright © 2026
+    <span class="order-3 md:order-2 lg:order-2 text-xs md:text-xl text-center text-white">Copyright © 2026
       |
-      Mayara
-      Martins</span>
+      Mayara Martins</span>
   </footer>
 </body>
 
