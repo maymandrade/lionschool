@@ -8,8 +8,7 @@ import { getAlunos, getAlunosCurso, getCursos, getDetalhesAluno, getStatusAlunos
 
 export async function abrirPagina(curso) {
     try {
-        const json = await getCursos()
-        const cursos = json.response
+
         const container = document.getElementById('main')
 
         while (container.firstChild) {
@@ -57,15 +56,15 @@ export async function abrirPagina(curso) {
         divStatus.appendChild(cursando)
 
         const divLegenda = document.createElement('div')
-        divLegenda.className = 'flex flex-col items-center justify-center'
-        
+        divLegenda.className = 'flex flex-col md:flex-row md:gap-4 items-center justify-center'
+
         const legenda = document.createElement('span')
         legenda.textContent = 'LEGENDA'
         legenda.className = 'text-[#3347B0] text-[14px]'
         divLegenda.appendChild(legenda)
 
         const divIcones = document.createElement('div')
-        divIcones.className = 'flex gap-2'
+        divIcones.className = 'flex gap-2 items-center justify-center'
 
         const divAzul = document.createElement('div')
         divAzul.className = 'w-4 h-4 bg-[#3347B0] shadow-2xl shadow-[1px_1px_8px_gray]'
@@ -89,13 +88,13 @@ export async function abrirPagina(curso) {
 
         const divTituloPrincipal = document.createElement('div')
         divTituloPrincipal.className = 'pt-6'
-        
+
         const tituloPrincipal = document.createElement('h1')
         tituloPrincipal.className = 'text-[#3347B0] text-[clamp(2rem,2vw,4rem)] md:text-[64px] text-center font-medium'
-        tituloPrincipal.textContent = 'Desenvolvimento de Sistemas'
+        tituloPrincipal.textContent = curso.nome
         divTituloPrincipal.appendChild(tituloPrincipal)
 
-        
+
         dropdownStatus.appendChild(btnStatus)
         dropdownStatus.appendChild(divStatus)
         menu.appendChild(dropdownStatus)
@@ -109,29 +108,38 @@ export async function abrirPagina(curso) {
 }
 
 export async function abrirTelaInicial() {
-    const json = await getCursos()
-    const cursos = json.response
+    const cursos = await getCursos()
 
     const botoes = document.getElementById('botoes')
 
-    const card = document.getElementById('card')
-
     cursos.forEach(curso => {
 
-        const imagemCurso = document.getElementById('imagem-curso')
+        const card = document.createElement('button')
+        card.className = 'bg-[#3347B0] gap-10 h-[clamp(175px,40vw,200px)] w-[clamp(175px,40vw,400px)] shadow-2xl shadow-[15px_15px_6px_#3347B050] md:shadow-[15px_15px_0_#3347B050] flex items-center justify-center transition-all duration-300 hover:shadow-[15px_15px_6px_#3347B050] hover:-translate-y-2'
+
+        card.addEventListener('click', () => {
+            abrirPagina(curso)
+        })
+
+        card.addEventListener('click', () => {
+            abrirPagina(curso)
+
+        })
+
+        const imagemCurso = document.createElement('img')
         imagemCurso.src = curso.icon
         imagemCurso.alt = curso.nome
+        imagemCurso.className = 'hidden md:flex w-24 h-19 '
 
-        const nomeCurso = document.getElementById('nome-curso')
+        const nomeCurso = document.createElement('h1')
         nomeCurso.textContent = curso.sigla
+        nomeCurso.className = 'text-6xl text-white'
 
         card.appendChild(imagemCurso)
         card.appendChild(nomeCurso)
         botoes.appendChild(card)
-        
-    });
-    
 
+    })
 }
 
 export async function abrirBotao() {
