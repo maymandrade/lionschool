@@ -1,4 +1,4 @@
-/*******************************************************************************************
+``/*******************************************************************************************
 objetivo: Arquivo responável pelas funções utilizadas na pagina
 autor: Mayara Martins
 versão:1.0.0
@@ -6,17 +6,17 @@ data:27/07/2026
 ********************************************************************************************/
 import { getAlunos, getAlunosCurso, getCursos, getDetalhesAluno, getStatusAlunos } from './api.js'
 
-export async function abrirPagina() {
+export async function abrirPagina(curso) {
     try {
-        const json = await getAlunosCurso()
-        const alunos = json.response
+        const json = await getCursos()
+        const cursos = json.response
         const container = document.getElementById('main')
 
         while (container.firstChild) {
             container.removeChild(container.firstChild)
         }
 
-        container.className = 'flex flex-1 justify-between'
+        container.className = 'flex flex-col flex-1'
 
         // menu
         const menu = document.createElement('div')
@@ -32,74 +32,106 @@ export async function abrirPagina() {
         const divStatus = document.createElement('div')
         divStatus.className = 'flex flex-col absolute w-48 bg-[#3347B0] border border-gray-200 rounded-md shadow-lg hidden'
 
-        btnStatus.addEventListener('click', () => {
+        dropdownStatus.addEventListener('mouseenter', () => {
+            divStatus.classList.remove('hidden')
+        })
+
+        dropdownStatus.addEventListener('mouseleave', () => {
+            divStatus.classList.add('hidden')
+        })
+
+        dropdownStatus.addEventListener('click', () => {
             divStatus.classList.toggle('hidden')
         })
 
-        const status = document.createElement('a')
-        status.textContent = 'Status'
-        status.href = '#'
-        status.className = 'block px-4 py-2 text-sm text-white hover:bg-gray-100'
-        divStatus.appendChild(status)
-
-        const finalizado = document.createElement('a')
+        const finalizado = document.createElement('button')
         finalizado.textContent = 'Finalizado'
         finalizado.href = '#'
-        finalizado.className = 'block px-4 py-2 text-sm text-white  hover:bg-gray-100'
+        finalizado.className = 'block px-4 py-2 text-sm text-white text-left  hover:bg-[#BCC2E5] hover:text-[#3347B0]'
         divStatus.appendChild(finalizado)
 
-        const cursando = document.createElement('a')
+        const cursando = document.createElement('button')
         cursando.textContent = 'Cursando'
         cursando.href = '#'
-        cursando.className = 'block px-4 py-2 text-sm text-white hover:bg-gray-100'
+        cursando.className = 'block px-4 py-2 text-sm text-white text-left  hover:bg-[#BCC2E5] hover:text-[#3347B0]'
         divStatus.appendChild(cursando)
 
-        const dropdownLegenda = document.createElement('div')
-        dropdownLegenda.className = 'relative inline-block text-left'
-
-        const btnLegenda = document.createElement('button')
-        btnLegenda.textContent = 'Legenda'
-        btnLegenda.className = 'text-[#3347B0] text-[18px] px-4 py-2'
-
         const divLegenda = document.createElement('div')
-        divLegenda.className = 'flex flex-col absolute right-0 w-48 bg-white border border-gray-200 rounded-md shadow-lg hidden'
+        divLegenda.className = 'flex flex-col items-center justify-center'
+        
+        const legenda = document.createElement('span')
+        legenda.textContent = 'LEGENDA'
+        legenda.className = 'text-[#3347B0] text-[14px]'
+        divLegenda.appendChild(legenda)
 
-        btnLegenda.addEventListener('click', () => {
-            divLegenda.classList.toggle('hidden')
-        })
+        const divIcones = document.createElement('div')
+        divIcones.className = 'flex gap-2'
 
-        const finalizadoLegenda = document.createElement('a')
-        finalizadoLegenda.textContent = 'Finalizado'
-        finalizadoLegenda.href = '#'
-        finalizadoLegenda.className = 'block px-4 py-2 text-sm text-[#3347B0] hover:bg-gray-100'
-        divLegenda.appendChild(finalizadoLegenda)
+        const divAzul = document.createElement('div')
+        divAzul.className = 'w-4 h-4 bg-[#3347B0] shadow-2xl shadow-[1px_1px_8px_gray]'
+        divIcones.appendChild(divAzul)
 
-        const cursandoLegenda = document.createElement('a')
+        const cursandoLegenda = document.createElement('span')
         cursandoLegenda.textContent = 'Cursando'
-        cursandoLegenda.href = '#'
-        cursandoLegenda.className = 'block px-4 py-2 text-sm text-[#E5B657] hover:bg-gray-100'
-        divLegenda.appendChild(cursandoLegenda)
+        cursandoLegenda.className = 'text-[#3347B0] text-[12px]'
+        divIcones.appendChild(cursandoLegenda)
+        divLegenda.appendChild(divIcones)
 
+        const divLaranja = document.createElement('div')
+        divLaranja.className = 'w-4 h-4 bg-[#E5B657] shadow-2xl shadow-[1px_1px_8px_gray]'
+        divIcones.appendChild(divLaranja)
 
+        const finalizadoLegenda = document.createElement('span')
+        finalizadoLegenda.textContent = 'Finalizado'
+        finalizadoLegenda.className = 'text-[#3347B0] text-[12px]'
+        divIcones.appendChild(finalizadoLegenda)
         // fim menu
+
+        const divTituloPrincipal = document.createElement('div')
+        divTituloPrincipal.className = 'pt-6'
+        
+        const tituloPrincipal = document.createElement('h1')
+        tituloPrincipal.className = 'text-[#3347B0] text-[clamp(2rem,2vw,4rem)] md:text-[64px] text-center font-medium'
+        tituloPrincipal.textContent = 'Desenvolvimento de Sistemas'
+        divTituloPrincipal.appendChild(tituloPrincipal)
+
+        
         dropdownStatus.appendChild(btnStatus)
         dropdownStatus.appendChild(divStatus)
-        dropdownLegenda.appendChild(btnLegenda)
-        dropdownLegenda.appendChild(divLegenda)
         menu.appendChild(dropdownStatus)
-        menu.appendChild(dropdownLegenda)
+        menu.appendChild(divLegenda)
         container.appendChild(menu)
-
-
-        // const titulo = document.createElement('h1')
-        // titulo.textContent = "testando"
-        // div.appendChild(titulo)
-
-        container.appendChild(menu)
+        container.appendChild(divTituloPrincipal)
 
     } catch (error) {
         return false
     }
+}
+
+export async function abrirTelaInicial() {
+    const json = await getCursos()
+    const cursos = json.response
+
+    const botoes = document.getElementById('botoes')
+
+    const card = document.getElementById('card')
+
+    cursos.forEach(curso => {
+
+        const imagemCurso = document.getElementById('imagem-curso')
+        imagemCurso.src = curso.icon
+        imagemCurso.alt = curso.nome
+
+        const nomeCurso = document.getElementById('nome-curso')
+        nomeCurso.textContent = curso.sigla
+
+        card.appendChild(imagemCurso)
+        card.appendChild(nomeCurso)
+        botoes.appendChild(card)
+        
+    });
+    
+
 }
 
 export async function abrirBotao() {

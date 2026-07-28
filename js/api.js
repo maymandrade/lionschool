@@ -17,7 +17,7 @@ let detalheAluno = []
 export async function getCursos() {
 
     const response = await fetch(`${URL}/cursos`)
-    cursos = response.json()
+    cursos = await response.json()
 
     if (!response.ok) throw new Error('Erro ao buscar cursos!')
 
