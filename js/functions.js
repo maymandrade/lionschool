@@ -129,7 +129,7 @@ export async function abrirTelaInicial() {
         const imagemCurso = document.createElement('img')
         imagemCurso.src = curso.icon
         imagemCurso.alt = curso.nome
-        imagemCurso.className = 'hidden md:flex w-24 h-19 '
+        imagemCurso.className = 'hidden md:flex w-24 h-19 invert'
 
         const nomeCurso = document.createElement('h1')
         nomeCurso.textContent = curso.sigla
