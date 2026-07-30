@@ -4,7 +4,8 @@ autor: Mayara Martins
 versão:1.0.0
 data:27/07/2026
 ********************************************************************************************/
-import { abrirBotao, abrirTelaInicial } from './functions.js'
+import { abrirBotao, abrirTelaInicial, voltarTelaInicial } from './functions.js'
 
+voltarTelaInicial()
 abrirTelaInicial()
 abrirBotao()
