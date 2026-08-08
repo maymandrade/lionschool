@@ -61,4 +61,6 @@ export async function getDetalhesAluno(id) {
     detalheAluno = response.json()
 
     if (!response.ok) throw new Error('Erro ao encontrar detalhes do aluno!')
+
+    return detalheAluno
 }
